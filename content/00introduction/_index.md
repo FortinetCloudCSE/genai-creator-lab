@@ -1,7 +1,7 @@
 ---
 title: "Introduction"
 linkTitle: "Introduction"
-weight: 1
+weight: 20
 ---
 
 In this chapter you will get an introduction into the theory of machine learning models and how to develop such.
