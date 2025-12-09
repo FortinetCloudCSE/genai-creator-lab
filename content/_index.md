@@ -1,7 +1,7 @@
 ---
 title: "GenAI Creator Lab"
 linkTitle: "GenAI Creator Lab"
-weight: 1
+weight: 10
 archetype: "home"
 description: "Deep Learning Lab - Build a Spam Classifier from Scratch"
 ---

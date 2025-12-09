@@ -1,5 +1,5 @@
 ---
 title: "Model Building & Training"
 linkTitle: "Model Building & Training"
-weight: 1
+weight: 40
 ---
