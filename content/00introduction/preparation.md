@@ -3,7 +3,7 @@ title: "Prepare the Environment"
 linkTitle: "Prepare the Environment"
 weight: 3
 ---
-# Setup Google Colab
+## Setup Google Colab
 
 For this lab we will use [Google Colab](https://colab.google/). This allows you, to have a stable environment including powerfull hardware to train a machine learning model.
 To use Google Colab, a Google Account is required (it doesn't matter if this is your coporate or private one).
@@ -16,7 +16,7 @@ To use Google Colab, a Google Account is required (it doesn't matter if this is 
 4. Now you should be able to access the Jupyter Notebook which allows to follow along with the lab.
 ![workspace](./assets/Screenshot%202025-12-09%20at%2013-00-34%20Untitled0.ipynb%20-%20Colab.png)
 
-# Setup dependencies
+## Setup dependencies
 
 - Install the Hugging face `datasets` library
 - Import base libraries for data handling like `pandas`, `numpy`, `os`, etc
@@ -40,7 +40,7 @@ from datasets import load_dataset
 from sklearn.metrics import classification_report, confusion_matrix
 ```
 
-## Validate if a GPU is available
+### Validate if a GPU is available
 
 ```python
 #@title Check GPU

@@ -6,7 +6,7 @@ archetype: "home"
 description: "Deep Learning Lab - Build a Spam Classifier from Scratch"
 ---
 
-Welcome to this hands-on machine learning lab!
+# Welcome to this hands-on machine learning lab!
 
 In this lab you will:
 
