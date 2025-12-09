@@ -4,7 +4,7 @@ linkTitle: "Vectorize the Training Data"
 weight: 3
 ---
 
-# Text Vectorization
+## Text Vectorization
 
 Modern neural networks cannot work directly with raw text. They require numerical input—typically sequences of integers.
 This section explains how text vectorization works, why it is necessary, and how the provided code implements it.
@@ -14,7 +14,7 @@ Text vectorization is the process of converting raw text (words, sentences, docu
 Neural networks operate using mathematical operations on vectors and matrices.
 Because text is not inherently numeric, we need a way to map text → numbers in a consistent and meaningful way.
 
-## Why Do We Need Vectorization?
+### Why Do We Need Vectorization?
 1. Neural networks require fixed-size numeric tensors
 Text varies in length and contains symbolic words, so we must convert it into:
 - numbers
@@ -43,7 +43,7 @@ Vectorization allows us to choose:
 4. Efficient training
 A clean numeric representation reduces memory usage and simplifies model operations.
 
-## How Does Vectorization Work Internally?
+### How Does Vectorization Work Internally?
 When using TextVectorization with output_mode="int", the process looks like this:
 
 1. Tokenization
@@ -73,7 +73,7 @@ During `.adapt()`, the layer:
 4. Padding or truncation
 All sequences are resized to `max_len`.
 
-### Defining Hyperparameters
+#### Defining Hyperparameters
 ```python
 max_tokens = 20000  # vocabulary size
 max_len    = 200    # sequence length
@@ -89,7 +89,7 @@ This ensures that the neural network receives input tensors of consistent shape:
 (batch_size, max_len)
 ```
 
-### Creating the Vectorization Layer
+#### Creating the Vectorization Layer
 ```python
 vectorize_layer = layers.TextVectorization(
     max_tokens=max_tokens,
@@ -99,7 +99,7 @@ vectorize_layer = layers.TextVectorization(
 ```
 This layer will eventually turn each text sample into a fixed-length integer sequence, ready for embedding or model input.
 
-### Adapting the Layer
+#### Adapting the Layer
 ```python
 text_ds_for_adapt = tf.data.Dataset.from_tensor_slices(train_texts).batch(512)
 vectorize_layer.adapt(text_ds_for_adapt)

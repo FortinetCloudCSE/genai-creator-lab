@@ -4,7 +4,7 @@ linkTitle: "Prepare training, validation & test data"
 weight: 2
 ---
 
-# Load the Dataset
+## Load the Dataset
 In this lab you will use the [Enron Spam Dataset](https://huggingface.co/datasets/SetFit/enron_spam) to train the model. This Dataset contains about 32.7k rows of different Spam and non-Spam emails.
 The dataset has been already split into a training and a test dataset. The training dataset part (usually 70% of the dataset) will be used to train the model. The test dataset part (the other 30 %) will be used by the model to validate the learned information.
 
@@ -47,7 +47,7 @@ print("\nExample HAM email:")
 print(train_df[train_df["label_text"] == "ham"]["text"].iloc[0][:500])
 ```
 
-# Splitting the Training Dataset
+## Splitting the Training Dataset
 
 Most HuggingFace datasets provide only:
 - a train set

@@ -4,7 +4,7 @@ linkTitle: "Optimize the Dataset"
 weight: 4
 ---
 
-# Optimizing the Dataset for TensorFlow
+## Optimizing the Dataset for TensorFlow
 
 TensorFlow’s tf.data API provides a fast, scalable, and memory-efficient way to load data during training.
 Instead of manually feeding NumPy arrays to the model, we wrap them into Dataset pipelines, which handle:

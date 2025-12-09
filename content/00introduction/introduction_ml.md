@@ -4,7 +4,7 @@ linkTitle: "Introduction to Machine Learning"
 weight: 2
 ---
 
-# What Is a Machine Learning Model?
+## What Is a Machine Learning Model?
 
 At its core, a **machine learning model** is a mathematical function that maps an input to an output:
 
@@ -22,7 +22,7 @@ This is why ML is powerful: we do not manually code every condition (“If email
 Instead, the model analyzes thousands of examples and discovers these patterns automatically.
 
 
-# Why Do We Need Models?
+## Why Do We Need Models?
 
 Models help us solve tasks too complex for rule-based programming, such as:
 
@@ -35,9 +35,9 @@ Models help us solve tasks too complex for rule-based programming, such as:
 These tasks involve patterns that are subtle, high‑dimensional, and messy — perfect for machine learning.
 
 
-# Types of Machine Learning Models
+## Types of Machine Learning Models
 
-## Classical Machine Learning Models
+### Classical Machine Learning Models
 
 ```mermaid
 graph LR
@@ -64,21 +64,21 @@ Limitations:
 - Struggle with long sequences  
 
 
-## Neural Networks
+### Neural Networks
 
 Neural networks changed everything by learning features directly from data.
 
 Types include:
 
-### **Feedforward Networks (MLPs)**
+#### **Feedforward Networks (MLPs)**
 - Good for simple classification tasks
 
-### **CNNs (Convolutional Neural Networks)**
+#### **CNNs (Convolutional Neural Networks)**
 - Extremely effective for images  
 - Extract spatial patterns (edges, textures)
 
-### **RNNs (Recurrent Neural Networks)**  
-### **LSTMs (Long Short-Term Memory networks)**
+#### **RNNs (Recurrent Neural Networks)**  
+#### **LSTMs (Long Short-Term Memory networks)**
 - Designed for sequence data such as text or speech  
 - Process one token at a time  
 - Understand ordering but struggle with long-term dependencies  
@@ -89,7 +89,7 @@ Limitations of RNNs/LSTMs:
 - Cannot parallelize well  
 
 
-## Transformers — The Modern Standard
+### Transformers — The Modern Standard
 
 Introduced in 2017 (“Attention Is All You Need”), Transformers became the foundation of modern AI.
 
@@ -102,7 +102,7 @@ graph TD
     C --> D[Spam Probability]
 ```
 
-### Why Transformers Are Powerful
+#### Why Transformers Are Powerful
 
 - They understand long-range dependencies  
 - They process whole sentences in parallel  
@@ -119,7 +119,7 @@ In the sentence *“claim your free prize now before the offer expires”* a Tra
 This is why Transformers dominate NLP today.
 
 
-# What Is Training Data?
+## What Is Training Data?
 
 Training data is the foundation of all machine learning.
 
@@ -148,7 +148,7 @@ Training data quality is crucial:
 > *Bad data = bad model.*
 
 
-# Why the Enron Email Dataset?
+## Why the Enron Email Dataset?
 
 The Enron dataset is historically significant:
 
@@ -157,16 +157,16 @@ The Enron dataset is historically significant:
 - Contains realistic spam attempts  
 - Contains internal (ham) messages  
 
-This gives students experience with messy, real-world NLP data — not artificial, simplified examples.
+This gives you the experience with messy, real-world NLP data — not artificial, simplified examples.
 
 
-# Understanding Text Representation
+## Understanding Text Representation
 
 Machines cannot understand text directly.
 
 We must transform text into numbers.
 
-### Traditional Approaches
+#### Traditional Approaches
 - **Bag of Words (BoW)**  
 - **TF‑IDF**
 
@@ -175,7 +175,7 @@ Limitations:
 - Ignore context  
 - Struggle with synonyms
 
-### Modern Approach: **Embeddings**
+#### Modern Approach: **Embeddings**
 
 Word embeddings (like Word2Vec, GloVe, or transformer embeddings):
 
@@ -189,7 +189,7 @@ Word embeddings (like Word2Vec, GloVe, or transformer embeddings):
 In this workshop, we use **10‑dimensional embeddings** — small enough to train quickly but large enough to learn patterns.
 
 
-# What Does a Transformer Model Learn in This Lab?
+## What Does a Transformer Model Learn in This Lab?
 
 Your spam classifier will learn:
 
@@ -202,7 +202,7 @@ Your spam classifier will learn:
 A small Transformer can achieve surprising performance, even with low dimensions.
 
 
-# The Complete Machine Learning Workflow
+## The Complete Machine Learning Workflow
 
 In this workshop you will learn every major step:
 
@@ -220,7 +220,7 @@ In this workshop you will learn every major step:
 This is the same workflow used in real AI projects.
 
 
-# What You Will Be Able to Explain After This Workshop
+## What You Will Be Able to Explain After This Workshop
 
 - What an ML model is  
 - Difference between classical ML, neural networks, and transformers  
