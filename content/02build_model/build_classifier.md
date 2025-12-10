@@ -158,3 +158,46 @@ To get an overview of the final model architecture, you can print a `summary()` 
 ```python
 model.summary()
 ```
+
+## Complete Code
+
+```python
+#@title Build 10-dimensional Transformer spam classifier
+
+embed_dim = 10   # requirement: 10-dimensional representation
+num_heads = 2    # can be tuned (must divide embed_dim)
+ff_dim    = 32   # feed-forward size (students can tune)
+dropout_rate = 0.2
+
+# Input is raw text
+text_input = layers.Input(shape=(), dtype=tf.string, name="text")
+
+# Text -> token IDs
+x = vectorize_layer(text_input)
+
+# Token IDs -> embeddings (10-dimensional)
+x = layers.Embedding(
+    input_dim=max_tokens,
+    output_dim=embed_dim,
+    name="token_embedding"
+)(x)
+
+# Transformer encoder
+x = TransformerBlock(
+    embed_dim=embed_dim,
+    num_heads=num_heads,
+    ff_dim=ff_dim,
+    rate=dropout_rate,
+)(x)
+
+# Reduce sequence to a single vector
+x = layers.GlobalAveragePooling1D()(x)
+x = layers.Dropout(dropout_rate)(x)
+
+# Output layer: spam (1) vs ham (0)
+output = layers.Dense(1, activation="sigmoid", name="spam_score")(x)
+
+model = keras.Model(inputs=text_input, outputs=output)
+
+model.summary()
+```
