@@ -1,6 +1,6 @@
 ---
 title: "Save/Load & Test the Model"
-linkTitle: "Save/Load & Test the Model""
+linkTitle: "Save/Load & Test the Model"
 weight: 3
 ---
 
