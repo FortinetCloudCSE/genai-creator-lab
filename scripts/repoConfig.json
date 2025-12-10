@@ -10,7 +10,7 @@
   "marketingCode": "FortiHugo202",
   "shortcuts": [
   {
-    "text": "Example Solution Jupyter Notebook",
+    "text": "Solution",
     "URL": "https://github.com/FortinetCloudCSE/genai-creator-lab/tree/main/solution/ml_lab_solution.ipynb",
     "icon": "fa-graduation-cap",
     "weight":10
