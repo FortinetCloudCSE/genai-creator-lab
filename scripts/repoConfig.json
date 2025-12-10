@@ -11,7 +11,7 @@
   "shortcuts": [
   {
     "text": "Example Solution Jupyter Notebook",
-    "URL": "https://github.com/FortinetCloudCSE/genai-creator-lab/tree/main/data/ml_lab_solution.ipynb",
+    "URL": "https://github.com/FortinetCloudCSE/genai-creator-lab/tree/main/solution/ml_lab_solution.ipynb",
     "icon": "fa-graduation-cap",
     "weight":10
   }
