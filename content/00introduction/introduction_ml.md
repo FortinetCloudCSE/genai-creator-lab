@@ -1,235 +1,459 @@
 ---
-title: "Introduction to Machine Learning"
-linkTitle: "Introduction to Machine Learning"
+title: "Introduction to AI, Machine Learning & Deep Learning"
+linkTitle: "Introduction to AI, Machine Learning & Deep Learning"
 weight: 2
 ---
 
-## What Is a Machine Learning Model?
+## What Is Artificial Intelligence (AI)?
 
-At its core, a **machine learning model** is a mathematical function that maps an input to an output:
+Artificial Intelligence (AI) is the broad discipline focused on building systems that can perform tasks requiring human-like intelligence. These include:
+- Understanding and generating language
+- Recognizing objects and patterns
+- Solving problems and making decisions
+- Learning from data and experience
+
+AI includes many subfields:
+- Natural Language Processing (NLP)
+
+Enables machines to understand, analyze, and generate human language.
+Examples: chatbots, translation, sentiment analysis.
+
+- Computer Vision
+
+Allows computers to "see" and interpret images and video.
+Examples: face recognition, autonomous driving, surveillance.
+
+- Robotics
+
+Combines perception, control, and decision-making to perform tasks autonomously.
+
+- Expert Systems
+
+Systems that mimic the decision-making abilities of human specialists.
+
+**AI’s Role**
+AI is not designed to replace humans, but to augment our capabilities:
+- Faster decisions
+- Reduced errors
+- Ability to handle massive amounts of data
+- Automation of repetitive tasks 
+ 
+AI is used widely today:
+
+| Domain         | AI Use Case                                       |
+| -------------- | ------------------------------------------------- |
+| Healthcare     | Diagnosis, personalized treatment, drug discovery |
+| Finance        | Fraud detection, credit scoring, trading          |
+| Cybersecurity  | Threat detection, anomaly detection               |
+| Transportation | Route optimization, autonomous driving            |
+
+
+## What Is Machine Learning? (Foundations & Intuition)
+Machine Learning (ML) is a subset of AI focused on building systems that learn patterns from data rather than being explicitly programmed.
+
+ML algorithms analyze data, detect patterns, and make predictions or decisions based on new input
+
+**Types of ML**
+- Supervised Learning (Spam Detection, Image Classification)
+
+Model learns from labeled data (e.g., emails marked spam or ham).
+
+- Unsupervised Learning (Clustering, Anomaly Detection)
+
+Model finds structure in unlabeled data (e.g., customer segmentation).
+
+- Reinforcement Learning (Robotics, Game Playing)
+
+Model learns by interacting with an environment and receiving rewards or penalties.
+
+**Practical Applications of ML**
+- Medical diagnosis
+- Fraud detection
+- Recommendation systems
+- Malware detection
+- Predictive maintenance
+- Autonomous vehicles
+
+ML is the engine that enables AI systems to adapt and improve over time.
+
+### What Is Deep Learning (DL)?
+
+Deep Learning (DL) is a subfield of ML that uses neural networks with many layers (deep neural networks) to learn complex patterns.
+
+**DL excels with unstructured data:**
+- Text
+- Images
+- Audio
+- Video
+
+DL models automatically discover meaningful features — no manual engineering required.
+
+**Key characteristics:
+- Hierarchical Feature Learning
+
+Early layers learn simple features (edges, words); deeper layers learn complex concepts (faces, sentiment, intent).
+
+- End-to-End Learning
+
+Model receives raw data and produces outputs directly.
+
+- Scalability
+
+DL models improve dramatically as data and compute increase.
+
+**Common Deep Learning Architectures**
+| Model Type       | Best For                      | Why                                         |
+| ---------------- | ----------------------------- | ------------------------------------------- |
+| **CNNs**         | Images, spatial data          | Detect local patterns & spatial hierarchies |
+| **RNNs**         | Sequences                     | Handle ordered, time-dependent data         |
+| **LSTMs / GRUs** | Long text sequences           | Better long-term memory                     |
+| **Transformers** | NLP, vision, multimodal tasks | Self-attention enables global reasoning     |
+
+Transformers are now the dominant architecture across NLP and many other ML tasks.
+
+### Relationship Between AI, ML, and DL
+Here is the hierarchy:
+```text
+Artificial Intelligence (AI)
+    └── Machine Learning (ML)
+          └── Deep Learning (DL)
+```
+
+**Examples of the hierarchy at work**
+- In Computer Vision, Deep CNNs dominate image classification.
+- In NLP, transformers like BERT and GPT outperform all prior ML models.
+- In Autonomous Driving, ML + DL work together:
+  - ML for prediction models
+  - DL for perception (lanes, objects)
+
+### Bringing It Back to This Workshop
+You will work primarily with:
+- Machine Learning (ML) for classifying emails
+- Deep Learning (DL) using neural networks
+- Transformers as the modern backbone of NLP
+
+Spam detection is a perfect example because it requires:
+- Understanding language
+- Detecting subtle patterns
+- Learning from real-world data
+- Generalizing to new emails
+- Adapting to evolving spam tactics
+
+By the end of this workshop, you'll understand how to build an AI system that performs a real-world NLP task using modern deep learning methods.
+
+
+### Why Machine Learning Exists
+Traditional programming requires humans to create explicit rules.  
+This fails in real-world tasks with high variability, such as spam detection.
+
+```text
+IF email contains "FREE" → spam
+```
+
+This breaks immediately when:
+- Spammers change vocabulary
+- New fraud techniques appear
+- Grammar, language, and tone vary
+
+Machine learning solves this by learning rules from examples, not from humans.
 
 ```mermaid
 graph TD
-    A[Input Data] --> B[Model Learns Patterns]
-    B --> C[Predicted Output]
+    A[Email Text] --> B[ML Model Learns Patterns]
+    B --> C[Spam Probability]
 ```
 
-But unlike traditional programming where humans write explicit rules…
+ML models learn patterns automatically instead of relying on rigid rules. Also the model discovers statistical regularities humans never coded.
 
-> **Machine learning models learn the rules from data.**
+### How Models Learn
+All ML models follow this loop:
+1. Input → text
+2. Model predicts → probability of spam
+3. Loss function → evaluates how wrong the prediction was
+4. Backpropagation → computes how each weight influenced error
+5. Gradient descent → updates weights to reduce future errors
 
-This is why ML is powerful: we do not manually code every condition (“If email contains the word *FREE* → spam”).  
-Instead, the model analyzes thousands of examples and discovers these patterns automatically.
+Repeating this process thousands of times makes the model learn.
 
+### Mathematics (Simple Intuition)
+A model is a function:
+```math
+$$y^=fθ(x)$$
+```
 
-## Why Do We Need Models?
+Training aims to minimize:
+```math
+$$Loss=Error(y,y^)$$
+```
 
-Models help us solve tasks too complex for rule-based programming, such as:
+The optimizer adjusts parameters:
+```math
+$$θnew=θold−α⋅∂θ∂Loss$$
+```
 
-- Understanding natural language  
-- Classifying emails as spam vs ham  
-- Translating languages  
-- Detecting fraud  
-- Recognizing objects in images  
+### Generalization, Underfitting, Overfitting
+Underfitting
+- Model too simple
+- Fails to learn patterns
 
-These tasks involve patterns that are subtle, high‑dimensional, and messy — perfect for machine learning.
+Overfitting
+- Memorizes training examples
+- Performs poorly on unseen data
+
+Generalization
+- Learns underlying structure
+- Performs well on new data
+
+Concept drift
+- Real-world patterns change (spam evolves)
+- Model must be retrained periodically
 
 
 ## Types of Machine Learning Models
 
-### Classical Machine Learning Models
+In this chapter we will go over the following topics:
+- Understand classical ML vs deep learning
+- Explain manual vs learned features
+- Understand the limitations of traditional NLP methods
+
+### Classical Machine Learning
+Classical ML models include:
+- Logistic Regression
+- Naive Bayes
+- Support Vector Machines
+- Decision Trees / Random Forests
+
+They rely heavily on manual feature engineering (TF-IDF, Bag-of-Words).
 
 ```mermaid
 graph LR
-    A[Raw Text] --> B[Manual Features]
-    B --> C[Classical Algorithm]
+    A[Text] --> B[Manual Feature Engineering]
+    B --> C[Classical Model]
     C --> D[Spam/Ham]
 ```
 
-These models rely on manually engineered features.  
-Examples include:
+Strengths
+- Simple
+- Fast
+- Works well on structured data
 
-- **Logistic Regression** – predicts binary outcomes  
-- **Naïve Bayes** – very common in early spam filters  
-- **Support Vector Machines (SVMs)** – strong for high‑dimensional data  
-- **Decision Trees / Random Forests** – intuitive and interpretable  
+Weaknesses
+- Cannot understand meaning
+- Word order ignored
+- Cannot capture context
+- Struggles with long sequences
 
-Strengths:
-- Fast to train  
-- Work well on structured tabular data  
+### Why Classical ML Fails for Real NLP
+Example:
+- “You won a free iPhone!”
+- “Claim your reward now!”
 
-Limitations:
-- Poor at understanding context in unstructured data (text, images, audio)  
-- Require manual feature engineering  
-- Struggle with long sequences  
+A TF-IDF model sees:
+- Completely different words
+- No connection between concepts (“won”, “reward”)
 
-
-### Neural Networks
-
-Neural networks changed everything by learning features directly from data.
-
-Types include:
-
-#### **Feedforward Networks (MLPs)**
-- Good for simple classification tasks
-
-#### **CNNs (Convolutional Neural Networks)**
-- Extremely effective for images  
-- Extract spatial patterns (edges, textures)
-
-#### **RNNs (Recurrent Neural Networks)**  
-#### **LSTMs (Long Short-Term Memory networks)**
-- Designed for sequence data such as text or speech  
-- Process one token at a time  
-- Understand ordering but struggle with long-term dependencies  
-
-Limitations of RNNs/LSTMs:
-- Slow to train  
-- Find it hard to remember information far back in text  
-- Cannot parallelize well  
+ML fails because meaning ≠ word counts.
+Deep learning models solved this gap.
 
 
-### Transformers — The Modern Standard
+## Neural Networks: Core Concepts
 
-Introduced in 2017 (“Attention Is All You Need”), Transformers became the foundation of modern AI.
+In this chapter we will go over the following topics:
+- Understand neurons, layers, weights, and activations
+- Learn how backpropagation works
+- Understand hierarchical feature learning
 
-They replaced RNNs by using **Self-Attention**, which allows the model to examine all words simultaneously and determine their importance to each other.
+### What Is a Neural Network?
+A neural network is a series of learned transformations.
+Example for a chain of transformations:
+```mermaid
+graph TD
+    A[Input] --> B[Hidden Layer 1]
+    B --> C[Hidden Layer 2]
+    C --> D[Output]
+```
+
+Each neuron computes:
+```math
+$$a=σ(Wx+b)$$
+```
+
+### Hierarchical Learning
+Deep networks build layers of understanding:
+- Layer 1 → edges, patterns, keywords
+- Layer 2 → sentiment, tone, syntax
+- Layer 3 → intent, meaning (fraud, manipulation)
+
+This hierarchical learning makes deep networks extremely powerful.
+
+
+### How Neural Networks Learn
+
+Neural networks adjust millions of weights using backpropagation.
+Each weight is updated by how much it contributed to the model’s error.
+
+This allows the network to gradually shift from random noise to pattern recognition.
+
+## Sequence Models: RNN, LSTM, GRU
+
+In this chapter we will go over the following topics:
+- Understand why sequential models were needed
+- Learn how RNNs build memory
+- Understand LSTM and GRU gating mechanisms
+- Recognize bottlenecks that transformers eliminate
+
+### RNN — Recurrent Neural Networks
+
+RNNs introduced the idea of time-dependent memory:
+```mermaid
+graph LR
+    A[Word at t] --> B[RNN Cell]
+    B --> C[Word at t+1]
+    B --> D[Hidden State Memory]
+```
+
+They track previous context using a hidden state.
+
+Weaknesses
+- Vanishing gradients
+- Slow (sequential processing)
+- Struggles with long-range patterns
+
+### LSTM — Long Short-Term Memory
+LSTMs added gates (input, forget, output) to regulate information flow.
+
+This allowed:
+- Better long-term memory
+- Less catastrophic forgetting
+
+For years, LSTMs were the backbone of NLP.
+
+### GRU — Gated Recurrent Unit
+A simpler LSTM:
+- Fewer gates
+- Faster to train
+- Slightly less expressive
+
+### Why Sequence Models Broke at Scale
+
+- Cannot parallelize
+- Slow to train on large datasets
+- Memory bottlenecks
+- Poor long-term reasoning
+
+These limitations motivated the invention of transformers.
+
+## CNNs & Feedforward Networks
+
+In this chapter we will go over the following topics:
+- Understand why CNNs work for textual patterns
+- Explain feature maps
+- Know their limits
+
+
+
+### Feedforward Networks (MLPs)
+MLPs treat input as fixed-length vectors.
+They ignore order, structure, and variable sequence length.
+
+### CNNs — Convolutional Neural Networks
+
+CNNs slide filters across sequences to detect local patterns:
 
 ```mermaid
 graph TD
-    A[Tokenized Text] --> B[Self Attention]
-    B --> C[Feed Forward Layer]
-    C --> D[Spam Probability]
+    A[Embedding Sequence] --> B[Convolution Filters]
+    B --> C[Feature Maps]
+    C --> D[Spam/Ham Output]
 ```
 
-#### Why Transformers Are Powerful
+CNNs detect:
+- "free offer"
+- "click now"
+- "urgent response"
 
-- They understand long-range dependencies  
-- They process whole sentences in parallel  
-- They scale extremely well (GPT, BERT, LLaMA)  
-- They capture contextual meaning  
-
-Example:  
-In the sentence *“claim your free prize now before the offer expires”* a Transformer can detect:
-
-- “free” → associated with spam  
-- “prize” ↔ “claim” connection  
-- urgency signals (“now”, “before”)  
-
-This is why Transformers dominate NLP today.
+Weaknesses
+- They do not understand long-range dependencies.
 
 
-## What Is Training Data?
+## Transformers & Self-Attention
 
-Training data is the foundation of all machine learning.
+In this chapter we will go over the following topics:
+- Understand self-attention
+- Compare transformers with RNN/LSTM
+- Learn why transformers dominate NLP today
 
-Each training example includes:
+### The Self-Attention Mechanism
 
-- **Input** — here: the email text  
-- **Output (label)** — spam (1) or ham (0)
+Transformers compare each word with every other word:
 
 ```mermaid
-graph LR
-    A[Email Text] --> C[Model Training]
-    B[Label: Spam/Ham] --> C
+graph TD
+    A[Tokens] --> B[Self Attention]
+    B --> C[Contextualized Representation]
+    C --> D[Output]
 ```
 
-The model looks at many examples and adjusts itself to reduce errors.  
-This process is called **training**, and it uses an algorithm called **gradient descent**.
+This allows the model to discover relationships instantly.
 
-Important training concepts:
+Example spam email:
+```text
+Claim your free prize now before the offer expires.
+```
 
-- **Training set** → used to learn patterns  
-- **Validation set** → used to tune hyperparameters  
-- **Test set** → used to measure performance on unseen data  
+Attention detects:
+- free ↔ prize
+- offer ↔ expires
+- urgency patterns
 
-Training data quality is crucial:
+### Multi-Head Attention
+Each head focuses on a different pattern:
+- Head 1 → urgency
+- Head 2 → reward structures
+- Head 3 → threat/pressure
 
-> *Bad data = bad model.*
+This parallel interpretation is why transformers are so strong.
 
+### Why Transformers Replaced LSTMs
 
-## Why the Enron Email Dataset?
-
-The Enron dataset is historically significant:
-
-- Comes from a real corporate environment  
-- Includes authentic communication patterns  
-- Contains realistic spam attempts  
-- Contains internal (ham) messages  
-
-This gives you the experience with messy, real-world NLP data — not artificial, simplified examples.
-
-
-## Understanding Text Representation
-
-Machines cannot understand text directly.
-
-We must transform text into numbers.
-
-#### Traditional Approaches
-- **Bag of Words (BoW)**  
-- **TF‑IDF**
-
-Limitations:
-- Lose word order  
-- Ignore context  
-- Struggle with synonyms
-
-#### Modern Approach: **Embeddings**
-
-Word embeddings (like Word2Vec, GloVe, or transformer embeddings):
-
-- Represent words as dense vectors  
-- Capture semantic meaning  
-- Allow computations like:  
-  ```
-  king - man + woman ≈ queen
-  ```
-
-In this workshop, we use **10‑dimensional embeddings** — small enough to train quickly but large enough to learn patterns.
+| Feature           | LSTM       | Transformer      |
+| ----------------- | ---------- | ---------------- |
+| Reads tokens      | sequential | parallel         |
+| Long-range memory | limited    | excellent        |
+| Training speed    | slow       | fast             |
+| Scalability       | low        | extremely high   |
+| NLP performance   | outdated   | state-of-the-art |
 
 
-## What Does a Transformer Model Learn in This Lab?
+## Embeddings & Representation Learning
+In this chapter we will go over the following topics:
+- Understand why text → numbers
+- Learn how embeddings encode meaning
+- Explain vector similarity
 
-Your spam classifier will learn:
+### Why Text Must Be Converted Into Numbers
+Neural networks require numeric vectors.
+Embeddings map words to dense vectors:
+```text
+"free" → [0.2, -0.7, 0.1, ...]
+"winner" → [0.25, -0.82, 0.06, ...]
+```
 
-- Keyword patterns (“free”, “winner”, “urgent”)  
-- Sentence constructions common in spam  
-- Emotional tone (urgency, pressure, rewards)  
-- Writing style differences between ham and spam  
-- Statistical properties of spam emails  
+### Semantic Vector Spaces
+Embeddings encode meaning via relative positions:
+```text
+king - man + woman ≈ queen
+free + prize + claim ≈ spam-like semantics
+```
+This allows models to:
+- Generalize
+- Understand synonyms
+- Capture context
 
-A small Transformer can achieve surprising performance, even with low dimensions.
-
-
-## The Complete Machine Learning Workflow
-
-In this workshop you will learn every major step:
-
-1. Explore data  
-2. Visualize patterns  
-3. Vectorize text  
-4. Build a Transformer  
-5. Train the model  
-6. Validate performance  
-7. Evaluate using real metrics  
-8. Save your model  
-9. Load it later  
-10. Classify your own messages  
-
-This is the same workflow used in real AI projects.
-
-
-## What You Will Be Able to Explain After This Workshop
-
-- What an ML model is  
-- Difference between classical ML, neural networks, and transformers  
-- How data is transformed into usable numerical forms  
-- How training, validation, and testing work  
-- What embeddings are and why they matter  
-- How self-attention works  
-- How deep learning learns patterns from text  
-- How to evaluate a model properly  
-- How to deploy a model for inference  
-
-This foundational knowledge prepares you for more advanced NLP tasks later.
+### Embeddings Learned in This Workshop
+Your model learns 10-dimensional embeddings from the dataset.
+They become specialized for spam semantics, such as:
+- urgency
+- reward
+- threats
+- scam structure
