@@ -11,11 +11,19 @@ To use Google Colab, a Google Account is required (it doesn't matter if this is 
 1. Go to https://colab.research.google.com/
 2. Login to Google Colab by selecting the `Sign In` button at the top right corner
 ![login_screen](./assets/Screenshot%202025-12-09%20at%2012-45-31%20Welcome%20To%20Colab%20-%20Colab.png)
+
+
 3. Select `+ New notebook` in the Wizard
 ![new notebook](./assets/Screenshot%202025-12-09%20at%2012-58-31%20Welcome%20To%20Colab%20-%20Colab.png)
+
+
 4. Now you should be able to access the Jupyter Notebook which allows to follow along with the lab.
 ![workspace](./assets/Screenshot%202025-12-09%20at%2013-00-34%20Untitled0.ipynb%20-%20Colab.png)
 
+
+{{% notice info %}}
+Note: In every chapter/step you will find code snippets starting with `#@title ...`. You can copy and paste these code snippets into a code cell in your Colab notebook to run them. If there is a code snippet without this, it is used to explain some functionality and does not need to be copied.
+{{% /notice %}}
 ## Setup dependencies
 
 - Install the Hugging face `datasets` library
