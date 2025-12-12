@@ -5,7 +5,21 @@ weight: 3
 ---
 ## Setup Google Colab
 
-For this lab we will use [Google Colab](https://colab.google/). This allows you, to have a stable environment including powerfull hardware to train a machine learning model.
+For this lab we will use [Google Colab](https://colab.google/). Google Colab has many advantages over using our own hardware for this lab:
+
+- Free access to GPUs (at least sometimes)  
+- Zero installation overhead  
+- Ready-to-use scientific Python stack  
+- Cloud execution  
+- Notebook interface for interactive learning  
+
+This allows you, to have a stable environment including powerfull hardware to train a machine learning model.
+
+{{% notice info %}}
+You can still run this lab on your local machine if you prefer. However, I would recommend you having a Mac with an M-series chip or a Linux Machine. (I have never tested it on Windows!)
+In addition, I hardly recommend you to setup a Python virtual environment to avoid dependency conflicts with other Python projects on your machine.
+{{% /notice %}}
+
 To use Google Colab, a Google Account is required (it doesn't matter if this is your coporate or private one).
 
 1. Go to https://colab.research.google.com/
@@ -22,15 +36,22 @@ To use Google Colab, a Google Account is required (it doesn't matter if this is 
 
 
 {{% notice info %}}
-Note: In every chapter/step you will find code snippets starting with `#@title ...`. You can copy and paste these code snippets into a code cell in your Colab notebook to run them. If there is a code snippet without this, it is used to explain some functionality and does not need to be copied.
+In every chapter/step you will find code snippets starting with `#@title ...`. You can copy and paste these code snippets into a code cell in your Colab notebook to run them. If there is a code snippet without this, it is used to explain some functionality and does not need to be copied.
 {{% /notice %}}
 ## Setup dependencies
 
-- Install the Hugging face `datasets` library
-- Import base libraries for data handling like `pandas`, `numpy`, `os`, etc
-- Load TensorFlow Framework
-- Load `sklearn` for evalation
+The ML Software Stack we will use in this lab consists of the following components:
+- TensorFlow  
+Provides automatic differentiation, GPU computation, and model building tools.
+- Keras  
+A high-level API that makes deep learning intuitive.
+- HuggingFace Datasets  
+Enables easy loading and preprocessing of datasets.
+- NumPy & Pandas  
+Used for numerical operations and tabular views.
 
+
+Use the below code snippet to install and import the required dependencies in your Colab environment.
 ```python
 #@title Setup dependencies
 !pip install -q datasets
@@ -49,7 +70,18 @@ from sklearn.metrics import classification_report, confusion_matrix
 ```
 
 ### Validate if a GPU is available
+GPUs accelerate deep learning dramatically:
 
+```mermaid
+graph LR
+    CPU["CPU (8–16 cores)"] -->|Slow| Train[Training Time]
+    GPU["GPU (1000+ cores)"] -->|Fast| Train
+```
+
+Neural networks = millions of matrix multiplications  
+This results in: GPUs = massive speed boost.
+
+Use the below code snippet to check if a GPU is available in your Colab environment.
 ```python
 #@title Check GPU
 device_name = tf.test.gpu_device_name()
