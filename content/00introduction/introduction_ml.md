@@ -178,7 +178,7 @@ Repeating this process thousands of times makes the model learn.
 ### Mathematics (Simple Intuition)
 A model is a function:
 ```math
-$$y^=fθ(x)$$
+$$y=fθ(x)$$
 ```
 
 Training aims to minimize:
