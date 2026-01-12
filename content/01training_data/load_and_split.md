@@ -26,7 +26,7 @@ test_df = dataset["test"].to_pandas()
 train_df.head()
 ```
 
-To further evaluate the data, lets see how the distribution of the "good" (ham) and "bad" (spam) data is. For this, use the variables from the previous step and create diagram of the data distribution.
+To further evaluate the data, let's look at the distribution of the "good" (ham) and "bad" (spam) data. For this, use the variables from the previous step and create diagram of the data distribution.
 
 For this, create a diagram plot using the type `bar` and print this on the console. In addition, let's have a look on some examples for spam/ham.
 ```python
