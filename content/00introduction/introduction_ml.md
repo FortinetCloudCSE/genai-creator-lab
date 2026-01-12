@@ -56,15 +56,15 @@ ML algorithms analyze data, detect patterns, and make predictions or decisions b
 **Types of ML**
 - Supervised Learning (Spam Detection, Image Classification)
 
-Model learns from labeled data (e.g., emails marked spam or ham).
+    - Model learns from labeled data (e.g., emails marked spam or ham).
 
 - Unsupervised Learning (Clustering, Anomaly Detection)
 
-Model finds structure in unlabeled data (e.g., customer segmentation).
+    - Model finds structure in unlabeled data (e.g., customer segmentation).
 
 - Reinforcement Learning (Robotics, Game Playing)
 
-Model learns by interacting with an environment and receiving rewards or penalties.
+    - Model learns by interacting with an environment and receiving rewards or penalties.
 
 **Practical Applications of ML**
 - Medical diagnosis
@@ -102,6 +102,11 @@ Model receives raw data and produces outputs directly.
 DL models improve dramatically as data and compute increase.
 
 **Common Deep Learning Architectures**
+
+- **Convolutional Neural Networks:** A neural network architecture that learns hierarchical spatial features by applying shared convolutional filters over localized regions of structured input data.
+- **Recurrent Neural Networks:** A neural network designed to model sequential data by maintaining and updating an internal state that captures temporal dependencies across ordered inputs.
+- **Transformers:** A neural network architecture that models relationships within a sequence using self-attention mechanisms to capture global contextual dependencies without relying on recurrence or convolution.
+
 | Model Type       | Best For                      | Why                                         |
 | ---------------- | ----------------------------- | ------------------------------------------- |
 | **CNNs**         | Images, spatial data          | Detect local patterns & spatial hierarchies |
@@ -132,7 +137,7 @@ You will work primarily with:
 - Deep Learning (DL) using neural networks
 - Transformers as the modern backbone of NLP
 
-Spam detection is a perfect example because it requires:
+In this lab, we will use SPAM detection as a great example because it requires:
 - Understanding language
 - Detecting subtle patterns
 - Learning from real-world data
@@ -178,17 +183,18 @@ Repeating this process thousands of times makes the model learn.
 ### Mathematics (Simple Intuition)
 A model is a function:
 ```math
-$$y=fθ(x)$$
+$$y=f(x)$$
 ```
 
 Training aims to minimize:
 ```math
-$$Loss=Error(y,y^)$$
+<!-- $$Loss=Error(y,y^')$$ --> 
 ```
-
+$$Loss &= \frac{{1}{n}\sum_{c=1}^{N}​​(y_i​​−\hat{y}_​i​​)^2$$
+```
 The optimizer adjusts parameters:
 ```math
-$$θnew=θold−α⋅∂θ∂Loss$$
+$$θ_new=θ_old−α⋅{\partial θ}{\partial Loss}$$
 ```
 
 ### Generalization, Underfitting, Overfitting
