@@ -155,11 +155,13 @@ Here is what the output means:
 any software just for 15 $ - 99 $ understanding oem software
 lead me not into temptation ; i can find the way myself .
 # 3533 . the law disregards trifles .
+```
 
+```c
 [   46   241   127     8   166   311  1447  1733   241  1156    47    31
    123 18000    15    43   299     2   248  1503     1     2  1094     1
      1     0     0     0     0     0]
-
+```
 This array is the **numerical representation of the text**, where:
 
 - Each number corresponds to a word’s **ID in the vocabulary** and matches its exact position

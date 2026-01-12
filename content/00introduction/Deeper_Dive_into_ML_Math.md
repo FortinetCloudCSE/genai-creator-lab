@@ -1,15 +1,15 @@
 ---
 title: "Appendix - Deeper Dive into ML Math"
-linkTitle: "Deeper Dive into ML Math"
+linkTitle: "[Appendix] Deeper Dive into ML Math"
 weight: 4
 ---
 
 ## Neural Node (Neuron) Equation
-
-\[
+```math
+$$[
 a = \sigma(Wx + b)
-\]
-
+]$$
+```
 This equation describes **how a single neuron produces an output**.
 
 ---
