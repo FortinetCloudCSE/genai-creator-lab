@@ -53,19 +53,28 @@ Text is split into tokens (usually words or subwords).
 → ["this", "movie", "was", "amazing"]
 ```
 
-2. Vocabulary building
-During `.adapt()`, the layer:
+2. Vocabulary Building: Turning Words into IDs
+
+Machine learning models cannot work directly with text.  Before training begins, words must be converted into numbers.
+
+During the `.adapt()` step, the text vectorization layer builds a **vocabulary**, which is simply a dictionary that maps words to integer IDs.
+
 - scans all training texts
 - counts how often each word appears
 - keeps the most frequent words (up to max_tokens)
 - assigns each word a unique integer ID
 
+At this stage, words are treated as **symbols**, not meanings.  The model has not learned anything yet—it is only creating a lookup table.
+
 - Example vocabulary:
-```text
+
 {"<PAD>":0, "<OOV>":1, "the":2, "movie":3, "was":4, "good":5, ...}
 ```
+"<PAD>" is used to pad sequences so all inputs have the same length
+"<OOV>" (out-of-vocabulary) represents words not seen during training
+```
 3. Text → Sequence conversion
-```text
+
 ["this", "movie", "was", "amazing"]
 → [14, 3, 4, 112]
 ```
@@ -135,3 +144,31 @@ sample = train_texts[0]
 print("Raw text:", sample[:200])
 print("Token IDs:", vectorize_layer(tf.constant([sample]))[0][:30])
 ```
+### Interpreting the Vectorization Output
+
+After calling `adapt()`, the `TextVectorization` layer has built a vocabulary and can now convert raw text into numeric sequences.
+
+Here is what the output means:
+
+#### Raw text
+```text
+any software just for 15 $ - 99 $ understanding oem software
+lead me not into temptation ; i can find the way myself .
+# 3533 . the law disregards trifles .
+```
+
+```c
+[   46   241   127     8   166   311  1447  1733   241  1156    47    31
+   123 18000    15    43   299     2   248  1503     1     2  1094     1
+     1     0     0     0     0     0]
+```
+This array is the **numerical representation of the text**, where:
+
+- Each number corresponds to a word’s **ID in the vocabulary** and matches its exact position
+  - i.e. any = 46, software = 241, just = 127, etc. 
+- The same word always maps to the same number  
+  - For example, `"software"` appears twice and maps to the same ID (241) both times
+- The value `1` represents **`<OOV>` (out-of-vocabulary)**  
+  - These are words not seen often enough (or at all) during training
+- The value `0` represents **`<PAD>`**  
+  - Padding is added at the end so all sequences have the same length

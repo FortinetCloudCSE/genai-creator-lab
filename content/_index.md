@@ -8,7 +8,7 @@ description: "Deep Learning Lab - Build a Spam Classifier from Scratch"
 
 # Welcome to this hands-on machine learning lab!
 
-In this lab you will:
+## In this lab you will
 
 - Work with real-world email spam data  
 - Build your own **Transformer-based NLP model**  
@@ -17,7 +17,14 @@ In this lab you will:
 - Understand each step of the ML pipeline  
 - Run live inference on user-provided text inputs  
 
-### Learning Goals
+## What This Lab Covers—and What It Does Not
+
+- This lab focuses on supervised machine learning.
+- The model produces deterministic predictions.
+- The objective is classification accuracy, not text generation.
+- Generative models and LLMs are covered in a separate advanced lab.
+
+## Learning Goals
 By the end of this lab you will be able to:
 
 - Explain how text datasets are prepared for machine learning  
