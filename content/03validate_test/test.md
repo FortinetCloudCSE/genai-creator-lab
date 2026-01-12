@@ -64,4 +64,6 @@ for e in examples:
     print("=" * 80)
     classify_email(e)
 ```
-
+{{% notice info %}}
+Update the examples with your own and test how "phishy" your messeges are! 
+{{% /notice %}}
