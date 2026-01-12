@@ -190,15 +190,15 @@ Training aims to minimize:
 
 ```math
 $$
-\begin{aligned}
-\text{Loss} &= \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
-\end{aligned}
+\mathrm{Loss} = \frac{1}{n}\sum_{i=1}^{n}\left(y_i - \hat{y}_i\right)^2
 $$
 ```
 
 The optimizer adjusts parameters:
 ```math
-$$θ_new=θ_old−α⋅{\partial θ}{\partial Loss}$$
+$$
+\theta_{\text{new}} = \theta_{\text{old}} - \alpha \frac{\partial \mathrm{Loss}}{\partial \theta}
+$$
 ```
 
 ### Generalization, Underfitting, Overfitting
