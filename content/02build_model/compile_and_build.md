@@ -84,7 +84,7 @@ In this step you will start with the training of the model. In this step, you ca
 ```python
 #@title Train the Transformer model
 
-epochs = 5  # this can be tuned
+epochs = 1  # this can be tuned
 
 history = model.fit(
     train_ds,

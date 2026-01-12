@@ -187,11 +187,15 @@ $$y=f(x)$$
 ```
 
 Training aims to minimize:
+
 ```math
-<!-- $$Loss=Error(y,y^')$$ --> 
+$$
+\begin{aligned}
+\text{Loss} &= \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
+\end{aligned}
+$$
 ```
-$$Loss &= \frac{{1}{n}\sum_{c=1}^{N}​​(y_i​​−\hat{y}_​i​​)^2$$
-```
+
 The optimizer adjusts parameters:
 ```math
 $$θ_new=θ_old−α⋅{\partial θ}{\partial Loss}$$
