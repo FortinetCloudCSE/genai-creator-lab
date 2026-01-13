@@ -16,7 +16,7 @@ With the predicted and actual labels, we can compute more detailed evaluation me
 
 Lastly, the confusion matrix shows the exact number of correct and incorrect predictions for each class. This helps identify systematic errors: false positives (ham incorrectly marked as spam) and false negatives (spam the model failed to detect). In a spam classifier, the balance between these two types of errors is crucial. Too many false positives annoy users with messages being wrongly filtered out, while too many false negatives let harmful or unwanted spam slip through.
 
-Overall, this evaluation code helps students understand not only how well the model performs overall but also how it performs, what types of mistakes it makes, and whether it is suitable for real-world use. It reinforces the idea that a proper machine learning evaluation always goes beyond accuracy and requires deeper diagnostic tools such as precision, recall, F1-score, and confusion matrices to truly understand a classifier’s strengths and weaknesses.
+This evaluation code will help you not only know how well the model performs overall, but also truly understand how it works, what types of mistakes it makes, and whether it is suitable for real-world use. Proper machine learning goes beyond accuracy and requires deeper diagnostic tools such as precision, recall, F1-score, and confusion matrices to truly understand a classifier’s strengths and weaknesses.
 
 ```python
 #@title Evaluate on test set
