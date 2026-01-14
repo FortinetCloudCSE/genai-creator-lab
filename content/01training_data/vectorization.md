@@ -74,7 +74,7 @@ At this stage, words are treated as **symbols**, not meanings.  The model has no
 "<OOV>" (out-of-vocabulary) represents words not seen during training
 ```
 3. Text → Sequence conversion
-
+```python
 ["this", "movie", "was", "amazing"]
 → [14, 3, 4, 112]
 ```
@@ -84,8 +84,8 @@ All sequences are resized to `max_len`.
 
 #### Defining Hyperparameters
 ```python
-max_tokens = 20000  # vocabulary size
-max_len    = 200    # sequence length
+max_tokens = 2000  # vocabulary size
+max_len    = 40    # sequence length
 ```
 - `max_tokens`
     - Limits vocabulary to the 20,000 most frequent words.
@@ -126,8 +126,8 @@ As a summary, this is the complete code to vectorize the Enron Spam dataset for 
 ```python
 #@title Text vectorization
 
-max_tokens = 20000  # vocabulary size
-max_len    = 200    # sequence length
+max_tokens = 2000  # vocabulary size
+max_len    = 40    # sequence length
 
 vectorize_layer = layers.TextVectorization(
     max_tokens=max_tokens,
@@ -157,7 +157,7 @@ lead me not into temptation ; i can find the way myself .
 # 3533 . the law disregards trifles .
 ```
 
-```c
+```python
 [   46   241   127     8   166   311  1447  1733   241  1156    47    31
    123 18000    15    43   299     2   248  1503     1     2  1094     1
      1     0     0     0     0     0]

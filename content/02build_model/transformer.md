@@ -209,7 +209,7 @@ This is required if you want to export the model or deploy it later.
 #@title Define Transformer block
 
 class TransformerBlock(layers.Layer):
-    def __init__(self, embed_dim=10, num_heads=2, ff_dim=32, rate=0.1, **kwargs):
+    def __init__(self, embed_dim=10, num_heads=2, ff_dim=8, rate=0.7, **kwargs):
         # IMPORTANT: pass **kwargs to super() to accept 'trainable', 'dtype', etc.
         super().__init__(**kwargs)
         self.embed_dim = embed_dim

@@ -29,9 +29,9 @@ These hyperparameters do not change during training; they shape the architecture
 
 ```python
 embed_dim = 10   # requirement: 10-dimensional representation
-num_heads = 2    # must divide embed_dim
-ff_dim    = 32   # size of the feed-forward network
-dropout_rate = 0.2
+num_heads = 2    # can be tuned (must divide embed_dim)
+ff_dim    = 8   # feed-forward size (students can tune)
+dropout_rate = 0.7
 ```
 
 ### Create the Input Layer for Raw Text
@@ -166,8 +166,8 @@ model.summary()
 
 embed_dim = 10   # requirement: 10-dimensional representation
 num_heads = 2    # can be tuned (must divide embed_dim)
-ff_dim    = 32   # feed-forward size (students can tune)
-dropout_rate = 0.2
+ff_dim    = 8   # feed-forward size (students can tune)
+dropout_rate = 0.7
 
 # Input is raw text
 text_input = layers.Input(shape=(), dtype=tf.string, name="text")
