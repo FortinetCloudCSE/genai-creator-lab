@@ -1,19 +1,31 @@
 {
   "repoName":"genai-creator-lab",
   "author":"Aidan Walden & Julian Petersohn",
-  "workshopTitle":"GenAI Creator Workshop",
+  "workshopTitle":"AI 101 - Building Supervised ML Models",
   "themeVariant":"Workshop",
-  "logoBannerText":"GenAI Creator Lab",
+  "logoBannerText":"AI 101 - Building Supervised ML Models",
   "logoBannerSubText":"Create your own ML Model at your own risk",
   "errorLevel":"warning",
   "googleServicesID":"G-5RZBH288ST",
   "marketingCode": "FortiHugo202",
   "shortcuts": [
   {
-    "text": "Complete Jupyter Notebook",
+    "text": "Solution Jupyter Notebook",
     "URL": "https://github.com/FortinetCloudCSE/genai-creator-lab/tree/main/solution/ml_lab_solution.ipynb",
     "icon": "fa-graduation-cap",
     "weight":10
+  },
+  {
+    "text": "Google ML Trainings",
+    "URL": "https://developers.google.com/machine-learning",
+    "icon": "fa-book",
+    "weight":20
+  },
+  {
+    "text": "AI Red Teaming Training",
+    "URL": "https://academy.hackthebox.com/path/preview/ai-red-teamer",
+    "icon": "fa-book",
+    "weight":30
   }
   ]
 }

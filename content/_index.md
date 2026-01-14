@@ -1,6 +1,6 @@
 ---
-title: "GenAI Creator Lab"
-linkTitle: "GenAI Creator Lab"
+title: "AI 101 - Building Supervised ML Models"
+linkTitle: "AI 101 - Building Supervised ML Models"
 weight: 10
 archetype: "home"
 description: "Deep Learning Lab - Build a Spam Classifier from Scratch"
