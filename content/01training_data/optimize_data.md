@@ -18,7 +18,7 @@ The code below converts your processed text + labels into TensorFlow-ready datas
 ```python
 #@title Build TensorFlow Dataset
 
-batch_size = 64  # can be tuned
+batch_size = 256  # can be tuned
 
 def make_dataset(texts, labels, training=True):
     ds = tf.data.Dataset.from_tensor_slices((texts, labels))
