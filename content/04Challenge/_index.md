@@ -59,3 +59,32 @@ print("[*] Your Result:\n")
 if r.headers.get("content-type","").startswith("application/json"):
     print(json.dumps(r.json(), indent=2))
 ```
+
+## Hints and Tips
+{{% expand title="Hint 1" %}}
+Have a look at the `epochs` parameter in the training step. Maybe slightly increasing it to something between 4 - 6 will help?
+{{% /expand %}}
+
+{{% expand title="Hint 2" %}}
+Have a look at the `ff_dim` parameter in the Transformer block. Maybe increasing it will help to something between 32 - 128?
+{{% /expand %}}
+
+{{% expand title="Hint 3" %}}
+Have a look at the `dropout_rate` parameter in the Transformer block. Maybe decreasing it will help to something between 0.1 - 0.3?
+{{% /expand %}}
+
+{{% expand title="Hint 4" %}}
+Have a look at the `max_len` parameter in the text vectorization step. Maybe increasing it will help to something between 150- 250?
+{{% /expand %}}
+
+{{% expand title="Hint 4" %}}
+Have a look at the `batch_size` parameter in the data preparation step. Maybe increasing it will help to something between 64 - 128?
+{{% /expand %}}
+
+{{% expand title="Hint 5" %}}
+Have a look at the `max_tokens` parameter in the text vectorization step. Maybe increasing it will help to something between 15000 - 25000?
+{{% /expand %}}
+
+{{% expand title="Hint 6" %}}
+Have a look at the optimizer `learning_rate` in the model compilation step. Maybe decreasing it will help to something between 0.0001 - 0.0005?
+{{% /expand %}}
