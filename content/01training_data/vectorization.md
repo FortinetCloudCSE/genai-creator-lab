@@ -14,6 +14,8 @@ Text vectorization is the process of converting raw text (words, sentences, docu
 Neural networks operate using mathematical operations on vectors and matrices.
 Because text is not inherently numeric, we need a way to map text → numbers in a consistent and meaningful way.
 
+![](./assets/bow_of_words.png)
+
 ### Why Do We Need Vectorization?
 1. Neural networks require fixed-size numeric tensors
 Text varies in length and contains symbolic words, so we must convert it into:

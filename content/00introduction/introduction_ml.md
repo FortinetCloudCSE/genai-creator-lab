@@ -314,6 +314,8 @@ In this chapter we will go over the following topics:
 
 ### RNN — Recurrent Neural Networks
 
+![Recurrent Neural Networks Schema](./assets/recurrant_neural_network_image.png)
+
 RNNs introduced the idea of time-dependent memory:
 ```mermaid
 graph LR
@@ -367,6 +369,8 @@ MLPs treat input as fixed-length vectors.
 They ignore order, structure, and variable sequence length.
 
 ### CNNs — Convolutional Neural Networks
+
+![Convolutional Neural Networks Schema](./assets/convolutional_neural_network_image.png)
 
 CNNs slide filters across sequences to detect local patterns:
 
@@ -423,6 +427,10 @@ Each head focuses on a different pattern:
 - Head 3 → threat/pressure
 
 This parallel interpretation is why transformers are so strong.
+
+### Transformers Architecture
+![Transformer Schema](./assets/transformer_image.png)
+
 
 ### Why Transformers Replaced LSTMs
 
