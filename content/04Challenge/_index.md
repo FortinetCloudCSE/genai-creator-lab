@@ -31,7 +31,7 @@ To submit your final model for validation, please use the following code snippet
 
 ```python
 #@title Submit Final Model for Validation
-import requests, zipfile, os, json
+import requests, zipfile, os, json, time
 
 PROVISIONER = "http://ml-workshop.ftntlab.tech/claim"
 
@@ -39,23 +39,23 @@ claim = requests.post(PROVISIONER, timeout=20).json()
 submit_url = claim["submit_url"]
 token = claim["submit_token"]
 
-print("Your submit URL:", submit_url)
-print("Your token:", token)
+print("[*] Your submit URL:", submit_url)
+print("[*] Your token:", token)
 
-SUBMISSION_DIR = "submission_model"
-model.export(SUBMISSION_DIR)
+model.save("submission.keras")
+!zip submission.zip submission.keras
+print("[*] Model saved and zipped.")
 
-zip_path = "submission.zip"
-!zip -r {zip_path} {SUBMISSION_DIR}
+time.sleep(5)
 
-with open(zip_path, "rb") as f:
+with open("submission.zip", "rb") as f:
     r = requests.post(
         submit_url,
         files={"file": f},
         headers={"X-Submit-Token": token},
-        timeout=120
+        timeout=180
     )
-
-print("Status:", r.status_code)
-print(json.dumps(r.json(), indent=2))
+print("[*] Your Result:\n")
+if r.headers.get("content-type","").startswith("application/json"):
+    print(json.dumps(r.json(), indent=2))
 ```
