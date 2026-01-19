@@ -51,6 +51,9 @@ The Adam optimizer is great default optimizer to start with. It provides some ca
 - Handles noisy gradients better than vanilla SGD
 
 #### Loss Function: Binary Crossentropy
+
+![Model Optimization & Loss Function flow](./assets/model_optimization-loss_function.png)
+
 The loss measures how far the predictions are from the true labels.  It’s what the optimizer tries to minimize.
 
 ```python
