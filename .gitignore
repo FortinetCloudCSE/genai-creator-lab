@@ -8,3 +8,4 @@ package.json
 /venv
 fortihugorunner
 .DS_Store
+.idea/*
