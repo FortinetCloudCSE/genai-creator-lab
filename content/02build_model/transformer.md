@@ -51,7 +51,7 @@ Choosing good hyperparameters can drastically improve performance.
 Next, we prepare the configuration of the block in the __init__ constructor:
 
 ```python
-def __init__(self, embed_dim=10, num_heads=2, ff_dim=32, rate=0.1, **kwargs):
+def __init__(self, embed_dim=10, num_heads=2, ff_dim=8, rate=0.7, **kwargs):
     super().__init__(**kwargs)
 ```
 
