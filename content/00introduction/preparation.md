@@ -97,3 +97,7 @@ if device_name:
 else:
     print("⚠️ No GPU detected. Training will still work, but slower.")
 ```
+{{% notice info %}}
+The free version of Google Colab does not guarantee GPU availability at all times. If no GPU is detected, you can try to enable it by going to `Runtime` -> `Change runtime type` and selecting `GPU` as the hardware accelerator. However, GPU availability may still be limited based on demand and usage policies.
+You can ignore this warning and continue with the lab, but training times will be significantly longer without a GPU.
+{{% /notice %}}
