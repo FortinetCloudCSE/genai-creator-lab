@@ -21,17 +21,23 @@
         "icon": "fa-graduation-cap",
         "weight":20
     },
+    {
+        "text": "Instructor Content",
+        "URL": "https://github.com/FortinetCloudCSE/genai-creator-lab/tree/main/instructor_content",
+        "icon": "fa-graduation-cap",
+        "weight":30
+    },
   {
     "text": "Google ML Trainings",
     "URL": "https://developers.google.com/machine-learning",
     "icon": "fa-book",
-    "weight":30
+    "weight":40
   },
   {
     "text": "AI Red Teaming Training",
     "URL": "https://academy.hackthebox.com/path/preview/ai-red-teamer",
     "icon": "fa-book",
-    "weight":40
+    "weight":50
   }
   ]
 }
