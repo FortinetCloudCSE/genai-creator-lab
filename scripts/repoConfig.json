@@ -1,9 +1,9 @@
 {
   "repoName":"genai-creator-lab",
   "author":"Aidan Walden & Julian Petersohn",
-  "workshopTitle":"AI 101 - Building Supervised ML Models",
+  "workshopTitle":"AI 301 - Building Supervised ML Models",
   "themeVariant":"Workshop",
-  "logoBannerText":"AI 101 - Building Supervised ML Models",
+  "logoBannerText":"AI 301 - Building Supervised ML Models",
   "logoBannerSubText":"Create your own ML Model at your own risk",
   "errorLevel":"warning",
   "googleServicesID":"G-5RZBH288ST",
